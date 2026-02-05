@@ -73,7 +73,7 @@
         main {
             max-width: 1000px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 50px;
             background-color: #e7f4ff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -131,6 +131,24 @@
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
+        
+        .profile-photo {
+            display: block;
+            margin: 20px auto;
+            width: 325px;
+            height: 450px;
+            border: 6px solid #ffc96b;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(75, 171, 255, 0.3);
+        }
+        footer {
+          color: #ffe2af;
+          margin-bottom: 50px;
+          background-color: #4babff;
+       text-align: center;
+       padding: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -143,6 +161,7 @@
     <nav>
         <button class="tab-button active" onclick="showTab('about')">about me</button>
         <button class="tab-button" onclick="showTab('portfolio')">portfolio</button>
+        <button class="tab-button" onclick="showTab('contact')">contact</button>
     </nav>
 
     <!-- Main content -->
@@ -150,9 +169,12 @@
         <!-- About Me Tab -->
         <div id="about" class="tab-content active">
             <h2>about me</h2>
-            <p>hi, my name is bailey. i love to make videos.</p>
-            <p>i decided to be super extra a create my own website. i don't know how to code but i'm trying to learn.</p>
-            <p>so that being said i hope you like my super simple cute website.</p>
+            <p>Hi, my name is Bailey Nye and I decided to be super extra a create my own website from scratch. I don't know how to code but I'm trying to learn. So that being said I hope you like my super simple website.</p>
+  
+            <p>A little bit about me is that I love pepperoni pizza, I like to play soccer, I like to snowboard, I love buffalo wings, I like to sew and I love sour candy. </p>
+            <p>But mostly I like to be creative and make videos. </p>
+            <p>Please send your questions, comments and concerns to my email listed under the contact tab. Thank you.</p>
+           <img src="webphoto.jpg" alt="profile photo" class="profile-photo"> 
         </div>
 
         <!-- Portfolio Tab -->
@@ -170,7 +192,7 @@
                     allowfullscreen>
                 </iframe>
             </div>
-
+        
             <div class="portfolio-item">
                 <h3>i stopped shooting for the stars</h3>
                 <iframe 
@@ -218,8 +240,19 @@
                     allowfullscreen>
                 </iframe>
             </div>
+            </div>
+            <!-- contact tab  -->
+            <div id="contact" class="tab-content">
+                <h2>contact</h2>
+                <p>baileynye17@gmail.com</p>
+            </div>
         </div>
     </main>
+    <footer>bailey nye - bailey nye - bailey nye - bailey nye -  bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye - bailey nye 
+      <div>
+       <p>2026©</p>
+      </div>
+    </footer>
 
     <script>
         // Simple function to switch between tabs
