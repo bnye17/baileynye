@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bailey nye</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling for the whole page */
+        body {
+            font-family: Tahoma, sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #acd8ff;
+        }
+
+        /* Header section */
+        header {
+            background-color: #4babff;
+            color: #ffe2af;
+            padding: 45px;
+            text-align: center;
+            
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 52px;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation tabs */
+        nav {
+            background-color: #ffc96b;
+            padding: 30px;
+            text-align: center;
+        }
+
+        nav button {
+            background-color: #ffe2af;
+            color: #8bbfff;
+            border: none;
+            padding: 20px 40px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px #ffc662a5;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #ffc662a5;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        nav button.active {
+            background-color: #ffe2af;
+        }
+
+        /* Main content area */
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px;
+            background-color: #e7f4ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: justify;
+        }
+
+        /* Tab content sections */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h2 {
+            color: #4babff;
+            border-bottom: 2px solid #ffc96b;
+            padding-bottom: 10px;
+        }
+
+        .tab-content p {
+            line-height: 2;
+            color: #4babff;
+        }
+
+        /* Portfolio items */
+        .portfolio-item {
+            margin: 40px 0;
+            padding: 50px;
+            background-color: #ffffff;
+            border-left: 6px solid #ffc96b;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(75, 171, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(75, 171, 255, 0.2);
+        }
+
+        .portfolio-item h3 {
+            margin-top: 0;
+            color: #4babff;
+            font-size: 24px;
+        }
+
+
+        .portfolio-item p {
+            color: #4babff;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-item iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-photo {
+            display: block;
+            margin: 20px auto;
+            width: 325px;
+            height: 450px;
+            border: 6px solid #ffc96b;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(75, 171, 255, 0.3);
+        }
+        footer {
+          color: #ffe2af;
+          margin-bottom: 80px;
+          background-color: #4babff;
+       text-align: center;
+       padding: 80px;
+        }
+
+        /* News Article Styles for Story Tab */
+        .story-article.active {
+            background-color: #ffffff;
+            padding: 80px 120px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            font-family: 'Times New Roman', Times, serif;
+            color: #0D2D47;
+        }
+
+        .article-container .article-lead {
+            font-family: 'Fjalla One', Impact, 'Arial Narrow', sans-serif;
+            color: #4babff;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 26px;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .article-container .article-nut {
+            color: #2a6fa8;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+            padding: 15px 20px;
+            border-left: 4px solid #ffc96b;
+            background-color: #fff4dd;
+        }
+
+        .article-container p {
+            color: #0D2D47;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .article-photo {
+            margin: 35px auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        .article-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .article-photo figcaption {
+            font-family: 'Times New Roman', Times, serif;
+            color: #0D2D47;
+            font-size: 12px;
+            margin-top: 8px;
+            font-style: italic;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header with name -->
+    <header>
+        <h1>bailey nye</h1>
+    </header>
+
+    <!-- Navigation tabs -->
+    <nav>
+        <button class="tab-button active" onclick="showTab('about')">about me</button>
+        <button class="tab-button" onclick="showTab('portfolio')">portfolio</button>
+        <button class="tab-button" onclick="showTab('contact')">contact</button>
+        <button class="tab-button" onclick="showTab('story')">story</button>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <!-- About Me Tab -->
+        <div id="about" class="tab-content active">
+            <h2>about me</h2>
+            <p>Hi, my name is Bailey Nye and I decided to be super extra a create my own website from scratch. I don't know how to code but I'm trying to learn. So that being said I hope you like my super simple website.</p>
+  
+            <p>A little bit about me is that I love pepperoni pizza, I like to play soccer, I like to snowboard, I love buffalo wings, I like to sew and I love sour candy. </p>
+            <p>But mostly I like to be creative and make videos. </p>
+            <p>Please send your questions, comments and concerns to my email listed under the contact tab. Thank you.</p>
+           <img src="webphoto.jpg" alt="profile photo" class="profile-photo"> 
+        </div>
+        
+    <div id="story" class="tab-content story-article">
+            <div class="article-container">
+                <p class="article-lead">A local group of moms came together to open the first public library the city of Alpine has seen in its 180 year history.</p>
+                <p class="article-nut">Founded almost two centuries ago, the city of Alpine has never had what most communities consider to be a staple, a public library. But, thanks to the tireless efforts of volunteers in the community that has changed.</p>
+
+                <figure class="article-photo">
+                    <img src="A-4_Original Medium.jpeg" alt="Welcome to Alpine Library sign">
+                    <figcaption>Photo taken by Bailey Nye at the Alpine City Library - February 2026</figcaption>
+                </figure>
+
+                <p>Alpine is a small city located in northern Utah County that was founded in 1850. Alpine is home to about 10,500 residents, and roughly one in three of them are under the age of 18. For years, members of the community have seen the need for a space where their children and families could gather to learn and connect.</p>
+                <p>"I used to take my three oldest kids to the public library where we lived in Spanish Fork. My two youngest daughters are now missing out on the chance to learn to love reading at a young age like my other kids," said Lindsey Nye, one of the moms behind the effort who now volunteers as the library's treasurer.</p>
+                <p>Other mothers with motives similar to Lindsey's decided to join together and take action.</p>
+                <p>In 2024, they formed The Friends of Alpine Library, which is an organization with the goal to "…to create a space that provides free access to books, learning resources, and meaningful community connection for all residents of Alpine," according to their website. Many other members of the community have joined in their efforts by donating money, books, time, and even a house.</p>
+
+                <figure class="article-photo">
+                    <img src="A-10_Original Medium.jpeg" alt="Children's book display at Alpine Library">
+                    <figcaption>Photo taken by Bailey Nye at the Alpine City Library - February 2026</figcaption>
+                </figure>
+
+                <p>Before the library had a permanent home, the community worked to give opportunities to children in other ways. They organized summer reading camps, hosted learning activities, and set up small pop up libraries around town. These activities were amazing for the children in the community, however, it was obvious that something was missing, Alpine needed a lasting space for the books and activities.</p>
+                <p>That opportunity came shortly after in 2025, when Burgess Orchards donated a property to The Friends of Alpine Library.</p>
+                <p>The generous donation located at 491 Alpine Highway just past Burgess Orchards, needed lots of work before it was library ready. It had endured years of neglect and was filled with a pungent smell of smoke.</p>
+                <p>That is where more volunteers stepped in.</p>
+
+                <figure class="article-photo">
+                    <img src="A-36_Original Medium.jpeg" alt="Children coloring at the library">
+                    <figcaption>Photo taken by Bailey Nye at the Alpine City Library - February 2026</figcaption>
+                </figure>
+
+                <p>Community members spent countless hours cleaning, repairing, and transforming the house into a cozy library. The smells of smoke and dust were replaced with the scent of fresh paint and book pages.</p>
+                <p>The library now stands to show what determination and service can do in a community. Alpine's isn't like most traditional public libraries. It is run entirely by volunteers and depends on donations to remain open and operating.</p>
+                <p>"It is so hard work to run a library without being funded by the city, but every time I see a group of kids at story time with their moms or a teenager come after school to the coding class, I feel like it really is totally worth it. So that's why I keep volunteering," said Bethany Sorenson, an Alpine resident of 9 years and the library's director of operations and facilities.</p>
+
+                <figure class="article-photo">
+                    <img src="A-43_Original Medium.jpeg" alt="Book sale at Alpine Library">
+                    <figcaption>Photo taken by Bailey Nye at the Alpine City Library - February 2026</figcaption>
+                </figure>
+
+                <p>In a fast growing city with many young families, the library provides a vital space where children can come to learn, ask questions, and develop a love of reading. It gives children easy access to educational resources close to home such as music lessons, writing workshops, a STEM club, art classes, and more. The library has been continually vibrant with families eager to learn since the doors first opened in February 2026.</p>
+                <p>What started as a vision to fill a gap in the community has become a local staple to the learning and progression of Alpine's children.</p>
+                <p>The Friends of Alpine Library are not going to stop here. "We want to add more books and programs to the library and eventually raise enough money to build a nicer building with more space." Lindsey said.</p>
+                <p>The library is open to any and all donations as well as community members who are willing to volunteer. "I can't stay at the library all day [...] which is why we need volunteers so we can be open longer hours."</p>
+
+                <figure class="article-photo">
+                    <img src="A-50_Original Medium.jpeg" alt="Ribbon cutting at Alpine Library">
+                    <figcaption>Photo taken by Bailey Nye at the Alpine City Library - February 2026</figcaption>
+                </figure>
+
+                <p>To learn more about the library and how you can help visit https://www.alpinelibrary.org/ .</p>
+            </div>
+        </div>
+
+        <!-- Portfolio Tab -->
+        <div id="portfolio" class="tab-content">
+            <h2>a few of my favorites</h2>
+            <div class="portfolio-item">
+                <h3>video package</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://youtube.com/embed/KKY3gQJsngE" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p>Owen Nye restores his late grandpa's motorcycle</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>basic shot type</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://youtube.com/embed/fKPz99Ms2yc" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p>Basic shot types demonstrated in video</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Environmental Stewardship as Children of God</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://youtube.com/embed/bVSNvrXUjec?si=w6cwe38FzxcqQaE8" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p>As children of God, we have a responsibility to care for the earth</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>after math</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://www.youtube.com/embed/iOMbnmuvOtg" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        
+
+            <div class="portfolio-item">
+                <h3>i want more out of life than this</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://www.youtube.com/embed/8IcaPYlkiLM" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <div class="portfolio-item">
+                <h3>lemonade wars</h3>
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://www.youtube.com/embed/hMW_SOyNcsI" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            </div>
+            <!-- contact tab  -->
+            <div id="contact" class="tab-content">
+                <h2>contact</h2>
+                <p>baileynye17@gmail.com</p>
+            </div>
+        </div>
+    </main>
+      <div>
+      </div>
+    </footer>
+
+    <script>
+        // Simple function to switch between tabs
+        function showTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+
+            // Remove active class from all buttons
+            var buttons = document.getElementsByClassName('tab-button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            // Show the selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
